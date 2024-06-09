@@ -1,0 +1,120 @@
+CompareEQOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareEQOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first == second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
+CompareNEQOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareNEQOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first != second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
+CompareLTOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareLTOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first < second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
+CompareLTEOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareLTEOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first <= second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
+CompareGTOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareGTOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first > second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
+CompareGTEOperation:
+java
+Copy code
+import java.util.Stack;
+
+public class CompareGTEOperation implements Operation {
+    @Override
+    public int execute(int programCounter, Stack<Integer> stack, SymbolTable symbolTable) {
+        int second = stack.pop();
+        int first = stack.pop();
+        int result;
+        if (first >= second) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+        stack.push(result);
+        return programCounter + 1;
+    }
+}
